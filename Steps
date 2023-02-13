@@ -39,3 +39,6 @@ UDP Scan", or "Detected Nmap XMAS Scan".
 
 This is a high-level overview of the steps required to recreate the results. Depending on your specific setup, there may be additional steps required, and you may 
 need to adjust the rules and pcaps as needed to fit your environment.
+
+
+https://bin3xish477.medium.com/installing-snort-on-kali-linux-9c96f3ab2910 - another guide (2020)
