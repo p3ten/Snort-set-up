@@ -27,12 +27,15 @@ Start Snort with the following command:
 
 snort -r <pcap_file> -c <rules_file> -l <log_dir>
 
-Replace <pcap_file> with the path to the pcap file you want to analyze, <rules_file> with the path to your snort_rules.rules file, and <log_dir> with the directory where you want the log files to be stored.
+Replace <pcap_file> with the path to the pcap file you want to analyze, <rules_file> with the path to your snort_rules.rules file, and <log_dir> with the directory
+where you want the log files to be stored.
 
 Check the alerts:
 
 After Snort has completed analyzing the pcap, check the log files for alerts.
 
-For each scan type, you should see an alert indicating that a Nmap scan has been detected, with the corresponding message "Detected Nmap SYN Scan", "Detected Nmap UDP Scan", or "Detected Nmap XMAS Scan".
+For each scan type, you should see an alert indicating that a Nmap scan has been detected, with the corresponding message "Detected Nmap SYN Scan", "Detected Nmap 
+UDP Scan", or "Detected Nmap XMAS Scan".
 
-This is a high-level overview of the steps required to recreate the results. Depending on your specific setup, there may be additional steps required, and you may need to adjust the rules and pcaps as needed to fit your environment.
+This is a high-level overview of the steps required to recreate the results. Depending on your specific setup, there may be additional steps required, and you may 
+need to adjust the rules and pcaps as needed to fit your environment.
