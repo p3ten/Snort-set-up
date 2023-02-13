@@ -1,0 +1,38 @@
+Install Snort:
+
+Download the latest version of Snort from the official website (https://www.snort.org/downloads).
+
+Follow the installation instructions for your operating system.
+
+Create the rules file:
+
+Create a new file using a text editor and paste the following rules:
+
+alert tcp any any -> any any (flags: S; count: 20; threshold: 15; msg: "Detected Nmap SYN Scan";)
+
+alert udp any any -> any any (dsize: <128; count: 20; threshold: 15; msg: "Detected Nmap UDP Scan";)
+
+alert tcp any any -> any any (dsize: > 64; flags: FUP; count: 20; threshold: 15; msg: "Detected Nmap XMAS Scan";)
+
+Save the file as snort_rules.rules.
+
+Capture the pcaps:
+
+For each of the Nmap scans (SYN, UDP, and XMAS), run the scan and capture the packets using the packet capture tool Wireshark.
+Save each pcap as a separate file, for example syn_scan.pcap, udp_scan.pcap, xmas_scan.pcap.
+
+Run Snort:
+
+Start Snort with the following command:
+
+snort -r <pcap_file> -c <rules_file> -l <log_dir>
+
+Replace <pcap_file> with the path to the pcap file you want to analyze, <rules_file> with the path to your snort_rules.rules file, and <log_dir> with the directory where you want the log files to be stored.
+
+Check the alerts:
+
+After Snort has completed analyzing the pcap, check the log files for alerts.
+
+For each scan type, you should see an alert indicating that a Nmap scan has been detected, with the corresponding message "Detected Nmap SYN Scan", "Detected Nmap UDP Scan", or "Detected Nmap XMAS Scan".
+
+This is a high-level overview of the steps required to recreate the results. Depending on your specific setup, there may be additional steps required, and you may need to adjust the rules and pcaps as needed to fit your environment.
